@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Form</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="all.min.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            Create Account
+        </div>
+        <form action="" class="form-main">
+            <div class="form-control success">
+                <label for="name">Username</label>
+                <input type="text" name="name" id="name">
+                <small class="check-success">&#x2713;</small>
+                <small class="check-error">&#33;</small>
+                <span class="error-message">Error message</span>
+            </div>
+            <div class="form-control success">
+                <label for="name">Username</label>
+                <textarea name="name" id="name"></textarea>
+                <small class="check-success">&#x2713;</small>
+                <small class="check-error">&#33;</small>
+                <span class="error-message">Error message</span>
+            </div>
+            <div class="form-control success">
+                <label for="name">Username</label>
+                <select name="name" id="name">
+                    <option value="test">Test1</option>
+                    <option value="test2">Test2</option>
+                    <option value="test3">Test3</option>
+                </select>
+                <small class="check-success">&#x2713;</small>
+                <small class="check-error">&#33;</small>
+                <span class="error-message">Error message</span>
+            </div>
+            <div class="form-control error">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <small class="check-success">&#x2713;</small>
+                <small class="check-error">&#33;</small>
+                <span class="error-message">Error message</span>
+            </div>
+            <div class="form-control success">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                <small class="check-success">&#x2713;</small>
+                <small class="check-error">&#33;</small>
+                <span class="error-message">Error message</span>
+            </div>
+            <div class="form-control error">
+                <label for="password-check">Confirm Password</label>
+                <input type="password" name="password-check" id="password-check">
+                <small class="check-success">&#x2713;</small>
+                <small class="check-error">&#33;</small>
+                <span class="error-message">Error message</span>
+            </div>
+            <button>Submit</button>
+        </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
