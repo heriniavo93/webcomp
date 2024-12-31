@@ -11,23 +11,30 @@
             box-sizing: border-box;
         }
 
-        body{
-            padding: 50px;
+       
+
+        custom-form{
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <form-control type="text" status="error" error="Le nom est obligatoire" label="Nom d'utilisateur"></form-control>
-    <form-control type="email" status="success" label="Adresse email"></form-control>
-    <form-control type="textarea" label="Description de l'article"></form-control>
-    <form-control type="select" label="Type de travaux" options='{"data": [[null, null],["name", "John"], ["age", 30], ["city", "New York"]], "default": 1}'></form-control>
-    <form-control type="select" label="Type de travaux" options='{"data": [[null, null],["name", "John"], ["age", 30], ["city", "New York"]], "default": 1}'></form-control>
-    <form-control type="select" label="Type de travaux" options='{"data": [[null, null],["name", "John"], ["age", 30], ["city", "New York"]], "default": 1}'></form-control>
-    <form-control type="select" label="Type de travaux" options='{"data": [[null, null],["name", "John"], ["age", 30], ["city", "New York"]], "default": 1}'></form-control>
-    <form-control type="select" label="Type de travaux" options='{"data": [[null, null],["name", "John"], ["age", 30], ["city", "New York"]], "default": 1}'></form-control>
-    <form-control type="select" label="Type de travaux" options='{"data": [[null, null],["name", "John"], ["age", 30], ["city", "New York"]], "default": 1}'></form-control>
- 
+        <custom-form submit="Enregistrer" title="Ajouter un utilisateur" width="1000px">
+            <form-control type="text"  error="Le nom est obligatoire" label="Nom d'utilisateur"></form-control>
+            <form-control type="email" label="Adresse email"></form-control>
+       </custom-form>
+
+
+        <custom-form submit="Mettre à jour" title="Modifier un Utilisateur">
+            <form-control status="error" type="text"  error="Le nom est obligatoire" label="Nom d'utilisateur"></form-control>
+            <form-control status="error" type="email" error="L'email est obligatoire" label="Adresse email"></form-control>
+            <form-control status="error" type="textarea" error="La description est obligatoire" label="Deposition"></form-control>
+        </custom-form>
+
+
+
     <script src="index.js"></script>
+    <script src="checkbox.js"></script>
 </body>
 </html>

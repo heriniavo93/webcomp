@@ -12,6 +12,7 @@ const MAIN_STYLE = `
     width: 500px;
     max-width: 100%;
     overflow: hidden;
+    border: 1px solid #f7f2f2;
 }
 
 .form-header{
@@ -112,7 +113,7 @@ class ItemForm extends HTMLElement{
 
         // Utils variables
         this.item = null
-
+        
         // Attach shadow
         this.attachShadow({mode: "open"})
     }
@@ -265,19 +266,57 @@ class ContainerForm extends HTMLElement{
         // Call super constructor
         super()
 
+        this.form = null
+        this.head = null
+
         // Attach shadow
         this.attachShadow({mode: "open"})
 
         // Create the element
-        
-
+        this.shadowRoot.innerHTML = ""
+        this.shadowRoot.appendChild(ContainerForm.template.content.cloneNode(true))
+        const style = document.createElement("style")
+        style.textContent = MAIN_STYLE
+        this.shadowRoot.appendChild(style)
+        this.container = this.shadowRoot.querySelector(".form-container")
+        this.form = this.shadowRoot.querySelector(".form-main")
+        this.head = this.shadowRoot.querySelector(".form-header")
     }
+
+    connectedCallback(){
+        
+    }   
+    
+    attributeChangedCallback(name, oldValue, newValue){
+        const title = this.getAttribute("title")
+        this.head.innerText = title
+
+        let btn = this.shadowRoot.querySelector("button")
+        if(btn == null){
+            btn = document.createElement("button")
+            this.form.appendChild(btn)
+        }
+
+        btn.innerText = this.getAttribute("submit")
+
+        const width = this.getAttribute("width")
+        if(width != null)
+            this.container.style.width = width
+    }
+    
 }
 
-
+ContainerForm.observedAttributes = ["submit", "title"]
 ContainerForm.template = document.createElement("template")
 ContainerForm.template.innerHTML = `
-
+<div class="form-container">
+        <div class="form-header">
+            Create Account
+        </div>
+        <form action="" class="form-main">
+            <slot></slot>
+        </form>
+</div>
 `
 
 
